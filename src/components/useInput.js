@@ -1,16 +1,32 @@
-import { useState } from "react";
+import React,{useState,useEffect,useRef} from 'react'
+import '../styles/App.css';
+const App = () => {
 
-//complete the input hook
-const useInput = (initialValue) => {
-   
-    const [value,setvalue1]=useState(initialValue);
+//code here
+  const [value2, SetValue2] = useState("");
+  const [value, SetValue] = useState("");
+  const newRef = useRef(null);
 
-    const onChange1=(e)=>{
-           setvalue1(e.target.value)
-        }
-    
+  const settingValue = () => {
+    SetValue2(value);
+    SetValue("");
+  }
 
-    return {value,onChange : onChange1,};
-};
+  const handle = () => { }
 
-export default useInput;
+  return (
+    <div id="main">
+      Email
+      <input id="inputEmail" type="text" value={value} ref={newRef} onChange={}/><br/>
+      Password
+      <input id="inputPassword" type="text" value={} ref={} onChange={}/><br/>
+      <button id="submitButton" onClick={handle}>Submit</button><br/>
+      <p id="emailText">Your Email : {}</p>
+      <p id ="passwordText">Your Password : {}</p>
+      
+    </div>
+  )
+}
+
+
+export default App;
